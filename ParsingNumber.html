@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tableCreate() {
+            var body = document.getElementsByTagName('body')[0];
+            var tbl = document.createElement('table');
+            tbl.style.width = '100%';
+            tbl.setAttribute('border', '1');
+            var tbdy = document.createElement('tbody');
+            const array = ['a', 'b', 'c', 'd', 'e', 'f'];
+            for (var i = 0; i < 5; i++) {
+                var tr = document.createElement('tr');
+                for (var j = 0; j < 5; j++) {
+
+                    var td = document.createElement('td');
+                    td.setAttribute("id", `${array[i]}${j}`);
+                    td.appendChild(document.createTextNode('\u0020'))
+                    tr.appendChild(td)
+
+                }
+                tbdy.appendChild(tr);
+            }
+            tbl.appendChild(tbdy);
+            body.appendChild(tbl)
+        }
+    </script>
+</head>
+
+<body onload="tableCreate()">
+    <script>
+        const array = ['a', 'b', 'c', 'd', 'e', 'f'];
+        const array2 = ['1234', '1234abc', '0.15', '3.15ivan', 'Infinity', '99999999999999999999'];
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                switch (j) {
+                    case 0:
+                        document.getElementById(`${array[i]}${0}`).innerText = array2[i];
+                        break;
+                    case 1:
+                        document.getElementById(`${array[i]}${j}`).innerText = parseInt(document.getElementById(`${array[i]}${0}`).innerText);
+                        break;
+                    case 2:
+                        document.getElementById(`${array[i]}${j}`).innerText = parseFloat(document.getElementById(`${array[i]}${0}`).innerText);
+                        break;
+                    case 3:
+                        document.getElementById(`${array[i]}${j}`).innerText = parseFloat(document.getElementById(`${array[i]}${0}`).innerText);
+                        break;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

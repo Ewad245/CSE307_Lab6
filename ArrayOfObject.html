@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Show() {
+            let books = [
+                {
+                    "title": "The Alchemist",
+                    "image": "https://salt.tikicdn.com/cache/750x750/ts/product/f3/a4/75/17dc9331bd1ae47008bb15e764746f99.jpg.webp",
+                    "price": 182.700
+                },
+                {
+                    "title": "Learning How to learn",
+                    "image": "https://barbaraoakley.com/wp-content/uploads/2018/02/LHTL.jpg",
+                    "price": 251.100
+                },
+                {
+                    "title": "Thinking, fast and slow",
+                    "image": "https://bizweb.dktcdn.net/thumb/grande/100/197/269/products/tu-duy-nhanh-va-cham.jpg?v=1528430381547",
+                    "price": 299.700
+                }];
+                books.sort((a,b)=>{return a.price-b.price});
+            for (i = 0; i < books.length; i++) {
+                document.getElementById('result').innerHTML += ` <div style='flex:30%'>
+                        <p id='title'>${books[i].title}</p>
+                        <img id='img' width=100
+                            src='${books[i].image}' />
+                        <p id='price'>
+                            ${books[i].price} VND
+                        </p>
+                    </div>`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="Show()">
+
+    <div id='result' style="display: flex;"></div>
+
+</body>
+
+</html>
