@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkPrime(){
+            var N = document.getElementById("in").value;
+            let sqrt =Math.sqrt(N);
+            for(let i=2;i<=sqrt;i++){
+                if(N%i){
+                    document.getElementById("Output").innerText="true";
+                    return
+                }
+            }
+            document.getElementById("Output").innerText="false";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        Enter a positive integer N:
+        <input type="text" id="in">
+        <button id="Check Prime" onclick="checkPrime()">Check Prime</button>
+    </div>
+    <p id="Output"></p>
+</body>
+
+</html>

@@ -32,11 +32,29 @@
         }
         console.log("Search by Name");
         function SearchByName(products) {
-            return products.Product_Name==="Snack";
+            return products.Product_Name === "Snack";
         }
         var product = products.find(SearchByName);
         console.log(product);
         console.log("Add/Remove Product by ID")
+        var product1 = {
+            "ID": 945,
+            "Product_Name": "Fruits",
+            "Quantity": 500,
+            "Price": 100,
+            "Image": "https://cdn.tgdd.vn/Products/Images/3364/79708/snack-bi-do-vi-bo-nuong-oishi-goi-35g-100423-031812-600x600.jpg"
+        }
+        products.push(product1);
+        console.log(products.find((products) => { return products.Product_Name === "Fruits" }))
+        products.pop()//Delete Last Element
+        console.log('Update information')
+        products[0].Product_Name = 'Pencil'
+        products[1].Product_Name = 'Laptop'
+        products[1].Price = 2000;
+        for (let i = 0; i < products.length; i++) {
+            console.log(products[i]);
+        }
+
     </script>
 </body>
 

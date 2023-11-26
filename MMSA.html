@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function MMSA() {
+            var string=document.getElementById('Num').value;
+            var array =string.split(",");
+            array.sort((a,b)=>{return a-b})
+            let p =document.createElement("p");
+            var average=0;
+            var sum=0;
+            for(let i=0;i<array.length;i++){
+                p.append(`${array[i]} `);
+                sum+=parseFloat(array[i]);
+            }
+            average=sum/(array.length-1);
+            document.getElementById('Output').appendChild(p);
+            document.getElementById('Output').innerHTML += `<p>Min:${parseFloat(array[0]).toFixed(2)}</p>
+            <p>Max:${parseFloat(array[array.length-1]).toFixed(2)}</p>
+            <p>Sum:${sum.toFixed(2)}</p>
+            <p>Average:${average.toFixed(2)}</p>`
+
+        }
+    </script>
 </head>
 <body>
     <p>Enter numbers seperated by commas:</p>
     <input type="text" id="Num">
-    <button onclick="MMSA()"></button>
+    <button onclick="MMSA()" value="Calculate">Calculate</button>
+    <div id="Output"></div>
 </body>
 </html>
