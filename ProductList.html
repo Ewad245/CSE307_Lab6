@@ -45,12 +45,24 @@
             "Image": "https://cdn.tgdd.vn/Products/Images/3364/79708/snack-bi-do-vi-bo-nuong-oishi-goi-35g-100423-031812-600x600.jpg"
         }
         products.push(product1);
-        console.log(products.find((products) => { return products.Product_Name === "Fruits" }))
+        for (let i = 0; i < products.length; i++) {
+            console.log(products[i]);
+        }
+        //console.log(products.find((products) => { return products.Product_Name === "Fruits" }))
         products.pop()//Delete Last Element
+        console.log("After delete the last element")
+        for (let i = 0; i < products.length; i++) {
+            console.log(products[i]);
+        }
         console.log('Update information')
+        //Update product by ID
+        function SearchByID(products) {
+            return products.ID === 456
+        }
         products[0].Product_Name = 'Pencil'
         products[1].Product_Name = 'Laptop'
         products[1].Price = 2000;
+        products.find(SearchByID).Quantity = 10;
         for (let i = 0; i < products.length; i++) {
             console.log(products[i]);
         }
